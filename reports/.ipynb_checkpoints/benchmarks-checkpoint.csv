@@ -1,0 +1,2 @@
+Model,Date,Data,Accuracy,Precision,Recall,F1 Score,AUC-ROC
+Logistic Regression,2025-02-11 02:29:42,lr_model_predictions.csv,0.41,0.16521739130434782,0.4634146341463415,0.24358974358974358,0.4856573094032827
