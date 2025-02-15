@@ -6,6 +6,12 @@ from datetime import datetime
 from awsglue.utils import getResolvedOptions
 from sqlalchemy import create_engine
 
+# def get_db_credentials(secret_name, region_name="us-east-1"):
+#     """Fetches database credentials from AWS Secrets Manager."""
+#     client = boto3.client("secretsmanager", region_name=region_name)
+#     response = client.get_secret_value(SecretId=secret_name)
+#     return json.loads(response["SecretString"])
+
 def get_latest_s3_file(s3_bucket, s3_prefix):
     """Finds the latest CSV file in the given S3 folder based on timestamp in the filename."""
     s3 = boto3.client("s3")
@@ -81,6 +87,15 @@ if __name__ == "__main__":
     table_name = args["table"]
     port = args.get("port", optional_args["port"])
 
+    # secret_name = ""
+    # region_name = "us-west-2"
+    # credentials = get_db_credentials(secret_name, region_name)
+    # host, port, database, username, password = (
+    #     credentials["host"], credentials.get("port", "3306"), credentials["database"],
+    #     credentials["username"], credentials["password"]
+    # ) 
+
+    
     # Extract: Read processed data from S3
     df = extract_processed_data_from_s3(s3_path)
 
