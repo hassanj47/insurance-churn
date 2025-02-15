@@ -59,6 +59,10 @@ For the Model serving pipeline, create a lambda function via a container image (
 
 3. The sample churn dataset from the insurance industry appears to be a synthetic dataset which turns out to be essentially random in exploratory data analysis. The trained models even after hyper-parameter tuning were not performing well. In future work, I'll test this against a real world dataset which should be feasible, since all other infrastructure is already in place.
 
+4. There are two additional features which can be added to this solution to enable a collaborative Machine Learning development environment. First one is integration with
+MLFlow for experiment tracking and ML model lifecycle management. Currently, both of these
+features from MLflow are substituted with experiment benchmarks and model registry on S3. Second is CI/CD, which is essential for automated testing and deployment of the solution. Due, to time constraints, I am adding these features to future backlog. 
+
 
    
 
